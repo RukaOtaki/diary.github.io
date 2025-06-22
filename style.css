@@ -1,0 +1,277 @@
+/* ベース設定 */
+body {
+  background-color: #f9f5f0;
+  color: #3e3e3e;
+  font-family: 'Noto Serif JP', serif;
+}
+
+/* ヘッダー */
+header {
+  background-color: #2d3748; /* bg-gray-800 */
+  color: #fbd38d; /* text-yellow-100 */
+  padding: 1rem; /* py-4 */
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); /* shadow */
+}
+
+/* ヘッダー内のコンテナ */
+header .container {
+  max-width: 1200px; /* 中央揃えコンテナの幅 */
+  margin: 0 auto; /* 左右中央揃え */
+  display: flex; /* Flexbox レイアウト */
+  justify-content: space-between; /* 左右に振り分け */
+  align-items: center; /* 垂直方向に中央揃え */
+}
+
+/* タイトル */
+header h1 {
+  font-size: 1.875rem; /* text-3xl */
+  font-family: 'Cinzel', serif; /* font-cinzel */
+  color: #ebcba2; /* text-yellow-200 */
+  font-weight: bold; /* font-bold */
+  letter-spacing: 0.05em; /* tracking-wide */
+  margin: 0; /* 余白リセット */
+  /* text-align: center; 削除 */
+  /* flex-grow: 1; 必要なければ削除 */
+}
+
+/* リンク（記憶を封じる） */
+header a {
+  display: inline-block; /* インラインブロックでサイズを設定可能に */
+  padding: 0.5rem 1.5rem; /* 内側余白 */
+  font-size: 0.875rem; /* 少し小さめのテキスト */
+  background-color: #f6ad48; /* オレンジ背景 */
+  color: #2d3748; /* ダーク文字色 */
+  border-radius: 0.5rem; /* 角を丸くする */
+  text-decoration: none; /* アンダーラインなし */
+  transition: background-color 0.3s ease; /* ホバー時の変化をスムーズに */
+  /* justify-content: flex-end; ←aタグに指定は不要 */
+  margin-left: 1rem; /* リンク間のスペース */
+}
+
+/* 右リンクホバー時のスタイル */
+header a:hover {
+  background-color: #d68537; /* 少し濃いオレンジ背景に変化 */
+  color: #ffffff; /* 白文字 */
+}
+
+/* 日記リスト全体 */
+#diary-list {
+  max-width: 700px;
+  margin: 3rem auto; /* より広い余白を追加 */
+  padding: 0 1rem;
+}
+
+.diary-card + .diary-card {
+  margin-top: 1rem; /* 各カード間のスペース */
+}
+
+/* 日記カードリスト */
+#diary-list {
+  margin: 2rem auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* カードを自動調整 */
+  gap: 1.5rem;
+}
+
+/* 日記カード全体 */
+.diary-card {
+  background: #f8f4e8; /* 黄ばんだ色を基調としたベース */
+  border: 1px solid #a48c74; /* 黄ばんだ焦げ茶色の枠線 */
+  border-radius: 12px; /* 紙の柔らかさを演出する角丸 */
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 優しい浮き上がり効果 */
+  position: relative;
+  font-family: "Noto Serif JP", serif; /* 和風で古典的なフォント */
+  overflow: hidden;
+}
+
+/* 日付部分 */
+.diary-date {
+  font-size: 0.85rem;
+  color: #6b5e4b; /* 黄ばんだ紙に調和する薄い焦げ茶色 */
+  margin-bottom: 0.5rem;
+}
+
+/* タイトル部分 */
+.diary-title {
+  font-family: "Playfair Display", serif; /* 優雅なセリフフォント */
+  color: #4a3f35; /* 深い焦げ茶色 */
+  font-size: 1.6rem;
+  letter-spacing: 0.05em; /* 微妙な字間 */
+  margin-bottom: 0.5rem;
+}
+
+/* 画像部分（カード内の画像を美しく表示） */
+.diary-image {
+  width: 100%;
+  max-height: 12rem;
+  object-fit: cover; /* 高さを保つ */
+  border-radius: 10px; /* 角丸で柔らかい雰囲気 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* 軽い影 */
+  margin-bottom: 1rem;
+}
+
+/* 内容部分 */
+.diary-content {
+  font-size: 0.9rem;
+  color: #564b41; /* 黄ばんだ紙上で読みやすい適度な焦げ茶色 */
+  line-height: 1.6; /* 読みやすい行間 */
+  margin-bottom: 1.5rem;
+}
+
+/* アクションボタンのコンテナスタイル */
+.diary-actions {
+  bottom: 1rem; /* カードの下からの位置を指定 */
+  right: 1rem; /* カードの右端からの位置を指定 */
+  display: flex; /* ボタンを横並びに表示 */
+  gap: 0.5rem; /* ボタン間のスペースを指定 */
+}
+
+/* 編集ボタン */
+.diary-edit-button {
+  font-family: 'Cinzel', serif; /* 古典的なスタイル */
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  color: #4a3f35; /* 黄ばんだ紙に馴染む色、焦げ茶色 */
+  background-color: #fdf8f0; /* ボタンの背景に柔らかい紙色 */
+  border: 1px solid #4a3f35; /* 焦げ茶色の枠線 */
+  border-radius: 6px;
+  text-decoration: none; /* アンダーラインなし */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.diary-edit-button:hover {
+  background-color: #4a3f35; /* ホバー時に背景を濃い焦げ茶に変更 */
+  color: #ffffff; /* 白文字へ変更 */
+}
+
+/* 削除ボタン */
+.diary-delete-button {
+  font-family: 'Cinzel', serif; /* 古典的なスタイル */
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  background-color: #a44c4c; /* 赤系アクセントの色 */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.diary-delete-button:hover {
+  background-color: #803838; /* ホバー時に暗めの赤へ切り替え */
+  transform: translateY(-2px); /* ボタンを少し浮かせる効果 */
+}
+
+
+/* 検索 */
+/* 入力フォーム（create/edit）共通 */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: #5b3a29;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #fafaf5; /* 柔らかい背景色 */
+  border: 2px solid #e5ded6; /* 繊細な枠線 */
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #5b3a29;
+  box-shadow: 0 0 8px rgba(91, 58, 41, 0.3);
+}
+
+form button {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: #5b3a29;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #3d2a1f;
+}
+
+/* Diaryボタン（＋新しい日記を書くボタン） */
+.diary-button {
+  display: inline-block;
+  background-color: #5b3a29; /* 焦げ茶 */
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.diary-button:hover {
+  background-color: #3e2a20;
+  transform: translateY(-2px);
+}
+
+/* 通知メッセージ */
+.notice-message {
+  position: fixed; /* 画面に固定表示 */
+  bottom: 20px; /* 画面の下部に配置 */
+  left: 50%; /* 水平方向中央 */
+  transform: translateX(-50%); /* 水平中央に寄せる */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明のブラック背景 */
+  color: #ffffff; /* 白色の文字 */
+  padding: 10px 20px; /* 内側の余白 */
+  border-radius: 6px; /* 角丸を適用 */
+  font-family: "Noto Serif JP", serif; /* フォントを統一 */
+  font-size: 0.9rem; /* サイズを整える */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* シャドウ効果 */
+  z-index: 1000; /* 他の要素より前面に表示 */
+}
+
+/* 通知メッセージがフェードアウトする際のアニメーション */
+.notice-message[style*="opacity: 0"] {
+  transition: opacity 0.5s ease; /* なめらかに消えるエフェクト */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}

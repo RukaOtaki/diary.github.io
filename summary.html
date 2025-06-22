@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TodayLog - 記憶の書を開く</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- head内でGoogle Fontsの読み込み -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Playfair+Display&family=Cinzel&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body class="bg-gray-100 text-gray-800">
+		<!-- ヘッダー -->
+		<header>
+			<div class="container">
+				<h1>黙示録ノ記憶</h1>
+			<a href="create.html">記憶を封じる</a>
+			</div>
+		</header>
+
+		<!-- メインコンテンツ -->
+		<main class="container mx-auto max-w-xl px-4 py-6">
+			<!-- 通知ボックス -->
+			<div id="notice-box" class="hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow"></div>
+			<!-- 検索ボックス -->
+			<div class="mb-4">
+				<input type="text" id="search-input"placeholder="記憶を召喚する" class="w-full p-2 border border-gray-300 rounded shadow-sm focus:ring focus:ring-yellow-300" />
+			</div>
+
+			<!-- 並び順変更 -->
+			<div class="mb-4 flex justify-between items-center">
+				<span class="text-sm text-gray-700">時の選定</span>
+				<select id="sort-select" class="p-2 border border-gray-300 rounded shadow-sm focus:ring focus:ring-yellow-300">
+					<option value="desc">降順</option>
+					<option value="asc">昇順</option>
+				</select>
+			</div>
+
+			<!-- 日記一覧 -->
+			<div id="diary-list" class="space-y-4">
+				<!-- JavaScriptで日記をここに表示 -->
+			</div>
+		</main>
+
+		<!-- フッター -->
+		<footer class="bg-gray-800 text-yellow-100 py-4 text-center">
+			<small>&copy; 2025 TodayLog - 黙示録ノ記憶</small>
+		</footer>
+
+		<script src="list.js"></script>
+	</body>
+</html>
