@@ -66,6 +66,6 @@ removeImageBtn.addEventListener("click", () => {
     logs.unshift(diary);
     localStorage.setItem("diaryLogs", JSON.stringify(logs));
     localStorage.setItem("notice", "saved");
-    window.location.href = "index.html";
+    window.location.href = "summary.html";
   }
 });
