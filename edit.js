@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!target) {
       alert("この世界に、その記憶は存在していないようだ");
-      window.location.href = "index.html";
+      window.location.href = "summary.html";
       return;
     }
 
