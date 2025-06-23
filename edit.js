@@ -83,7 +83,7 @@ removeImageBtn.addEventListener("click", () => {
         const updatedLogs = logs.map((log) => (log.id === id ? target : log));
         localStorage.setItem("diaryLogs", JSON.stringify(updatedLogs));
         localStorage.setItem("notice", "updated"); // 通知表示用
-        window.location.href = "index.html";
+        window.location.href = "summary.html";
       }
     });
   }
